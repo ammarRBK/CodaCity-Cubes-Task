@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three.js Crash Course</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="">
+    <style>
+    body {
+        margin: 0;
+    }
+
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="/home">Cubes Manager</a>
+        </div>
+        <ul class="nav navbar-nav">
+        <li class="active"><a href="/home">Home</a></li>
+        <li><a href="/addOne">Add new cube</a></li>
+        </ul>
+        <!-- <form class="navbar-form navbar-left" action="/action_page.php">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" name="search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        </form> -->
+    </div>
+    </nav>
+        
+    <!-- <script src="TrackballControls.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/90/three.min.js"></script>
+    <script src="render.js"></script>
+    <div id="addNEew" >
+        <center>
+            <select id="myselect">
+                <option value=""></option>
+                <option value="BoxBufferGeometry">BoxBufferGeometry</option>
+                <option value="BoxGeometry">BoxGeometry</option>
+                <option value="CircleBufferGeometry">CircleBufferGeometry</option>
+                <option value="CircleGeometry">CircleGeometry</option>
+                <option value="ConeBufferGeometry">ConeBufferGeometry</option>
+                <option value="ConeGeometry">ConeGeometry</option>
+                <option value="CylinderBufferGeometry">CylinderBufferGeometry</option>
+                <option value="CylinderGeometry">CylinderGeometry</option>
+                <option value="DodecahedronBufferGeometry">DodecahedronBufferGeometry</option>
+                <option value="EdgesGeometry">EdgesGeometry</option>
+                <option value="ExtrudeBufferGeometry">ExtrudeBufferGeometry</option>
+                <option value="ExtrudeGeometry">ExtrudeGeometry</option>
+                <option value="IcosahedronBufferGeometry">IcosahedronBufferGeometry</option>
+                <option value="IcosahedronGeometry">IcosahedronGeometry</option>
+                <option value="LatheBufferGeometry">LatheBufferGeometry</option>
+                <option value="LatheGeometry">LatheGeometry</option>
+                <option value="OctahedronBufferGeometry">OctahedronBufferGeometry</option>
+                <option value="OctahedronGeometry">OctahedronGeometry</option>
+                <option value="ParametricBufferGeometry">ParametricBufferGeometry</option>
+                <option value="ParametricGeometry">ParametricGeometry</option>
+                <option value="PlaneGeometry">PlaneGeometry</option>
+            </select>
+            <br><br>
+            The width  <p>   </p> <input id="width" placeholder="please Enter the width"/>
+            <br><br>
+            The height  <p>   </p><input id="height" placeholder="please Enter the height"/>
+            <br><br>
+            The depth   <p>  </p><input id="depth" placeholder="please Enter the depth"/>
+            <br><br><button type="submit" onclick="manager().add()"> Submit my Cube </button>
+        </center>
+    </div>
+</body>
+</html>

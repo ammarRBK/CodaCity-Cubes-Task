@@ -1,0 +1,25 @@
+{
+  "name": "three.js-crash-course",
+  "version": "1.0.0",
+  "description": "it is a crash course I want to learn it for job task from CodaCity",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "render.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ammarRBK/CodaCity-Cubes-Task.git"
+  },
+  "author": "Ammar Al-Ahmad",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "three-js": "^79.0.0"
+  }
+}
