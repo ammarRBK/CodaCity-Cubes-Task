@@ -29,8 +29,9 @@
         </div>
         <ul class="nav navbar-nav">
         <li class="active"><a href="/home">Home</a></li>
-        <li><a href="/addOne">Add new cube</a></li>
         </ul>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add New Cube</button>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#deleteCom">Delete Existing Cube</button>
         <!-- <form class="navbar-form navbar-left" action="/action_page.php">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Search" name="search">
@@ -43,40 +44,86 @@
     <!-- <script src="TrackballControls.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/90/three.min.js"></script>
     <script src="render.js"></script>
-    <div id="addNEew" >
-        <center>
-            <select id="myselect">
-                <option value=""></option>
-                <option value="BoxBufferGeometry">BoxBufferGeometry</option>
-                <option value="BoxGeometry">BoxGeometry</option>
-                <option value="CircleBufferGeometry">CircleBufferGeometry</option>
-                <option value="CircleGeometry">CircleGeometry</option>
-                <option value="ConeBufferGeometry">ConeBufferGeometry</option>
-                <option value="ConeGeometry">ConeGeometry</option>
-                <option value="CylinderBufferGeometry">CylinderBufferGeometry</option>
-                <option value="CylinderGeometry">CylinderGeometry</option>
-                <option value="DodecahedronBufferGeometry">DodecahedronBufferGeometry</option>
-                <option value="EdgesGeometry">EdgesGeometry</option>
-                <option value="ExtrudeBufferGeometry">ExtrudeBufferGeometry</option>
-                <option value="ExtrudeGeometry">ExtrudeGeometry</option>
-                <option value="IcosahedronBufferGeometry">IcosahedronBufferGeometry</option>
-                <option value="IcosahedronGeometry">IcosahedronGeometry</option>
-                <option value="LatheBufferGeometry">LatheBufferGeometry</option>
-                <option value="LatheGeometry">LatheGeometry</option>
-                <option value="OctahedronBufferGeometry">OctahedronBufferGeometry</option>
-                <option value="OctahedronGeometry">OctahedronGeometry</option>
-                <option value="ParametricBufferGeometry">ParametricBufferGeometry</option>
-                <option value="ParametricGeometry">ParametricGeometry</option>
-                <option value="PlaneGeometry">PlaneGeometry</option>
-            </select>
-            <br><br>
-            The width  <p>   </p> <input id="width" placeholder="please Enter the width"/>
-            <br><br>
-            The height  <p>   </p><input id="height" placeholder="please Enter the height"/>
-            <br><br>
-            The depth   <p>  </p><input id="depth" placeholder="please Enter the depth"/>
-            <br><br><button type="submit" onclick="manager().add()"> Submit my Cube </button>
-        </center>
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+                <div id="addNEew" >
+                        <center>
+                            <select id="myselect">
+                                <option value=""></option>
+                                <option value="BoxBufferGeometry">BoxBufferGeometry</option>
+                                <option value="BoxGeometry">BoxGeometry</option>
+                                <option value="CircleBufferGeometry">CircleBufferGeometry</option>
+                                <option value="CircleGeometry">CircleGeometry</option>
+                                <option value="ConeBufferGeometry">ConeBufferGeometry</option>
+                                <option value="ConeGeometry">ConeGeometry</option>
+                                <option value="CylinderBufferGeometry">CylinderBufferGeometry</option>
+                                <option value="CylinderGeometry">CylinderGeometry</option>
+                                <option value="DodecahedronBufferGeometry">DodecahedronBufferGeometry</option>
+                                <option value="EdgesGeometry">EdgesGeometry</option>
+                                <option value="ExtrudeBufferGeometry">ExtrudeBufferGeometry</option>
+                                <option value="ExtrudeGeometry">ExtrudeGeometry</option>
+                                <option value="IcosahedronBufferGeometry">IcosahedronBufferGeometry</option>
+                                <option value="IcosahedronGeometry">IcosahedronGeometry</option>
+                                <option value="LatheBufferGeometry">LatheBufferGeometry</option>
+                                <option value="LatheGeometry">LatheGeometry</option>
+                                <option value="OctahedronBufferGeometry">OctahedronBufferGeometry</option>
+                                <option value="OctahedronGeometry">OctahedronGeometry</option>
+                                <option value="ParametricBufferGeometry">ParametricBufferGeometry</option>
+                                <option value="ParametricGeometry">ParametricGeometry</option>
+                                <option value="PlaneGeometry">PlaneGeometry</option>
+                            </select>
+                            <br><br>
+                            The width  <p>   </p> <input id="width" placeholder="please Enter the width"/>
+                            <br><br>
+                            The height  <p>   </p><input id="height" placeholder="please Enter the height"/>
+                            <br><br>
+                            The depth   <p>  </p><input id="depth" placeholder="please Enter the depth"/>
+                            <br><br>
+                        </center>
+                    </div>
+          </div>
+          <div class="modal-footer">
+                <button type="submit" onclick="manager().add()"> Submit my Cube </button>
+          </div>
+        </div>
+        
+      </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="deleteCom" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="deleteCom">&times;</button>
+                </div>
+                <div class="modal-body">
+                      <div id="addNEew" >
+                              <center>
+                                  The username  <p>   </p> <input id="username" placeholder="please Enter the username"/>
+                                  <br><br>
+                                  The password  <p>   </p><input id="password" placeholder="please Enter the password"/>
+                                  <br><br>
+                                  Cube ID   <p>  </p><input id="cubeId" placeholder="please Enter the cube ID"/>
+                                  <br><br>
+                              </center>
+                          </div>
+                </div>
+                <div class="modal-footer">
+                      <button type="submit" onclick="manager().delete()" data-dismiss="modal"> Delete my Cube </button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
 </body>
 </html>

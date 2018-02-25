@@ -19,7 +19,7 @@ var cubePositiony= 3.5;
 
 //show multiple cubes using for loop
 for(var i=0; i<manager().cubesArr.length; i++){
-    var geometry = manager().cubesArr[i].geometry;
+    var geometry = manager().cubesArr[i].geometry || null;
     var material = new THREE.MeshNormalMaterial( { wireframe: false } );
     var cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
@@ -36,17 +36,41 @@ function manager (){
     var counter= 1;
     var info= {};
     
-        info.cubesArr= [{id:counter,geometry:new THREE.BoxGeometry(1,1,0.4)}];
+        info.cubesArr= [{id:counter || 1,geometry:new THREE.BoxGeometry(1,1,0.4)},{id:2,geometry:new THREE.BoxGeometry(1,1,0.4)}];
         
-        info.add= function(){
-            var geometryType= $( "#myselect" ).val();
-            var width= $("#width");
-            var height= $("#height");
-            var depth= $("#depth");
-            counter =+ 1;
-            info.cubesArr.push({id:counter,geometry: new THREE.geometryType(width,height,depth)})
+        // info.add= function(){
+        //     var geometryType= $( "#myselect option:selected" ).text();
+        //     var width= $("#width");
+        //     var height= $("#height");
+        //     var depth= $("#depth");
+        //     counter =+ 1;
+        //     console.log(geometryType)
+        //     info.cubesArr.push({id:counter,geometry: new THREE.geometryType(width,height,depth)})
             
-        }
+        // };
+
+        info.delete= function(){
+            var cubeId= Number($("#cubeId").val());
+            var username= $("#username").val();
+            var password= $("#password").val();
+            console.log(cubeId)
+            if(username === "ammar"){
+                if(password === "1234"){
+                    for(var j=0; j<info.cubesArr.length; j++){
+                        if(info.cubesArr[j].id === cubeId){
+                            info.cubesArr[j].geometry= null
+                            alert("the Cube deleted now");
+                            return;
+                        }
+                        console.log(info.cubesArr[j].id)
+                        alert("We do not have this Cube please enter a valid ID");
+                    }
+                    return;
+                }
+                alert("Wrong password");
+            }
+            alert("Wrong username");
+        };
 
     return info;
 }
