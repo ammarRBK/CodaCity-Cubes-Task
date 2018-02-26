@@ -1,4 +1,6 @@
+var geometry, material, cube;
 //--------------in the scene you add what you want render-----------\\
+
 var scene = new THREE.Scene();
 //----------------the container of the scene-----------------------\\
 var camera = new THREE.PerspectiveCamera( 100, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -15,9 +17,9 @@ var cubePositiony= 1;
 function init(){
 //show multiple cubes using for loop
     for(var i=0; i<manager().cubesArr.length; i++){
-        var geometry = manager().cubesArr[i].geometry || null;
-        var material = new THREE.MeshNormalMaterial( { wireframe: false } );
-        var cube = new THREE.Mesh( geometry, material );
+         geometry = manager().cubesArr[i].geometry || null;
+         material = new THREE.MeshNormalMaterial( { wireframe: false } );
+         cube = new THREE.Mesh( geometry, material );
         scene.add( cube );
         camera.position.z = 4;
         cube.position.y= cubePositiony
@@ -51,7 +53,7 @@ function manager (){
     var counter= 1;
     var info= {};
 //----------------------Geometries array to read the geometries from it in the init function------\\
-        info.cubesArr= [{id:counter || 1,geometry:new THREE.BoxGeometry(1,1,0.4)}];
+        info.cubesArr= [{id:counter || 1,geometry:new THREE.BoxGeometry(1,1,0.4)},{id:2,geometry:new THREE.BoxGeometry(1,1,0.4)}];
 //-------------------add function will push new geometry to the cubesArr--------------------\\
         info.add= function(){
             var width= $("#width");
@@ -59,7 +61,10 @@ function manager (){
             var depth= $("#depth");
             counter =+ 1;
             info.cubesArr.push({id:counter,geometry: new THREE.BoxGeometry(width,height,depth)});
+            // scene.add(new THREE.BoxGeometry(width,height,depth),material)
+            init();
             console.log(info.cubesArr.length)
+            alert("new cube added cograts");
             
         };
 //-----------------End of add function---------------------------\\
@@ -72,14 +77,24 @@ function manager (){
             console.log(cubeId)
             if(username === "ammar"){
                 if(password === "1234"){
+                    
                     for(var j=0; j<info.cubesArr.length; j++){
-                        if(info.cubesArr[j].id === cubeId){
-                            info.cubesArr[j].geometry= null
-                            alert("the Cube deleted now");
-                            return;
+                        if(cubeId !== 1){
+                            if(info.cubesArr[j].id === cubeId){
+                                // info.cubesArr[j].geometry= null
+                                scene.remove( cube );
+                                cube.dispose();
+                                geometry.dispose();
+                                material.dispose();
+                                texture.dispose();
+                                alert("the Cube deleted now");
+                                init();
+                                return;
+                            }
+                            console.log(info.cubesArr[j].id)
+                            alert("We do not have this Cube please enter a valid ID");
                         }
-                        console.log(info.cubesArr[j].id)
-                        alert("We do not have this Cube please enter a valid ID");
+                        alert("You can’t delete the fundamental cube please choose another cube");
                     }
                     return;
                 }
