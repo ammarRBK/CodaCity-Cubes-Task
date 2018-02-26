@@ -33,7 +33,7 @@ init()
 
 //-----------Mouse movement section---------------\\
 var mouse = {x:0,y:0};
-var cameraMoves = {x:0,y:0,z:-0.1,move:false,speed:0.2};
+var cameraMoves = {x:0,y:0,z:-0.1,move:false,speed:0.1};
 
 function mouseMove(e){
 
