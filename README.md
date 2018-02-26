@@ -4,7 +4,7 @@ welcome to our cubes manager website we done this project using:
 
 Three.js WebGL library, jquery , and HTML5
 
-our website is a one HTML5 page contains to components:
+our website is a one HTML5 page contains two components:
 
 1- navbar: which contains two dynamic buttons to add 3D Cubes and delete cube
 from the second cube.
