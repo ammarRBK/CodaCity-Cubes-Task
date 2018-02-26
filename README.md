@@ -1,15 +1,15 @@
-CodaCity-Cubes-Task
+﻿CodaCity-Cubes-Task
 
-welcom to our cubes manager website we done this project using: 
+welcome to our cubes manager website we done this project using: 
 
-Three.js WebGL library,jquery , and HTML5
+Three.js WebGL library, jquery , and HTML5
 
 our website is a one HTML5 page contains to components:
 
-1- navbar: wich contains two dynamic buttons to add 3D Cubes and delete cube
-frome the scond cube.
+1- navbar: which contains two dynamic buttons to add 3D Cubes and delete cube
+from the second cube.
 
-2- View: wich contains the cubes and when move you mouse over this component,
+2- View: which contains the cubes and when move you mouse over this component,
 you will change cubes’s position around the component
 
 if you to add new cube you will press on Add New Cube button and fill the cube’s
@@ -26,8 +26,8 @@ Notes:
 3- print npm install hit enter to install the dependencies,
 4- after installation done print "node server.js" in
 your terminal and hit enter,
-5- after you have seen "server is listining on port 4000" message
+5- after you have seen "server is listening on port 4000" message
 in your terminal Open you browser and print "localhost:4000"
 to play with our project.
 
-* Thanks for using our project and hope you injoyed using it.
+* Thanks for using our project and hope you enjoyed using it.
